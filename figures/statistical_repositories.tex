@@ -10,6 +10,8 @@
     \tikzstyle{repository} = [rectangle, draw, thick, double, fill=gray!10, text width=7em, text centered, rounded corners, minimum height=4em]
     \tikzstyle{repository-atdg} = [rectangle, draw, thick, double, fill=gray!30, text width=7em, text centered, rounded corners, minimum height=4em]
     \tikzstyle{repository-atsp} = [rectangle, draw, thick, double, fill=gray!60, text width=7em, text centered, rounded corners, minimum height=4em]
+    \tikzstyle{report-atdg} = [rectangle, draw, thick, fill=gray!30, text width=7em, text centered, rounded corners, minimum height=4em]
+    \tikzstyle{report-atsp} = [rectangle, draw, thick, fill=gray!60, text width=7em, text centered, rounded corners, minimum height=4em]
 
     % SECTION: Define the line styles
 
@@ -18,15 +20,17 @@
     \begin{tikzpicture}[node distance = 10em, auto]
 
       % SECTION: Create all of the nodes that will exist in the figure
-
-      % NODE: sbst-analysis R package
-      \node [repository] (sbst-analysis) {sbst-analysis \\ \faGithub};
-      \node [repository-atdg, right of=sbst-analysis, yshift=4em] (atdg-analysis) {atdg-analysis \\ \faGithub~or \faGit};
-      \node [repository-atsp, right of=sbst-analysis, yshift=-4em] (atsp-analysis) {atsp-analysis \\ \faGithub~or \faGit};
+      \node [repository] (sbst-analysis) {sbst-analysis \\ \vspace*{.25em}\faCode~in \faGithubAlt};
+      \node [repository-atdg, right of=sbst-analysis, yshift=4em] (atdg-analysis) {atdg-analysis \\ \vspace*{.25em} \faCode~+~\faDatabase~in \faGit};
+      \node [repository-atsp, right of=sbst-analysis, yshift=-4em] (atsp-analysis) {atsp-analysis \\ \vspace*{.25em} \faCode~+~\faDatabase~in \faGit};
+      \node [report-atdg, right of=atdg-analysis] (atdg-report) {atdg-report \\ \vspace*{.25em} \faCode~in \faGit};
+      \node [report-atsp, right of=atsp-analysis] (atsp-report) {atsp-report \\ \vspace*{.25em} \faCode~in \faGit};
 
       % SECTION: Create all of the paths between the nodes
       \path [line] (sbst-analysis) -- (atdg-analysis);
       \path [line] (sbst-analysis) -- (atsp-analysis);
+      \path [line] (atdg-analysis) -- (atdg-report);
+      \path [line] (atsp-analysis) -- (atsp-report);
 
     \end{tikzpicture}
 
