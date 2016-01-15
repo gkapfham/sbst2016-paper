@@ -5,27 +5,27 @@
 
   \begin{center}
 
-  % SECTION: Define block styles
+    % SECTION: Define block styles
 
-  \tikzstyle{repository} = [rectangle, draw, thick, double, fill=gray!20, text width=7em, text centered, rounded corners, minimum height=4em]
+    \tikzstyle{repository} = [rectangle, draw, thick, double, fill=gray!20, text width=7em, text centered, rounded corners, minimum height=4em]
 
-  % SECTION: Define the line styles
+    % SECTION: Define the line styles
 
-  \tikzstyle{line} = [draw, thick, -latex']
+    \tikzstyle{line} = [draw, thick, -latex']
 
-  \begin{tikzpicture}[node distance = 10em, auto]
+    \begin{tikzpicture}[node distance = 10em, auto]
 
-    % SECTION: Create all of the nodes that will exist in the figure
+      % SECTION: Create all of the nodes that will exist in the figure
 
-    % NODE: sbst-analysis R package
-    \node [repository] (sbst-analysis) {sbst-analysis};
+      % NODE: sbst-analysis R package
+      \node [repository] (sbst-analysis) {sbst-analysis};
 
-    \node [repository, right of=sbst-analysis] (identify) {identify candidate models};
+      \node [repository, right of=sbst-analysis] (identify) {identify candidate models};
 
-    % SECTION: Create all of the paths between the nodes
-    \path [line] (sbst-analysis) -- (identify);
+      % SECTION: Create all of the paths between the nodes
+      \path [line] (sbst-analysis) -- (identify);
 
-  \end{tikzpicture}
+    \end{tikzpicture}
 
   \end{center}
 
