@@ -9,7 +9,7 @@
 
     \tikzstyle{repository} = [rectangle, draw, thick, double, fill=gray!10, text width=7em, text centered, rounded corners, minimum height=4em]
     \tikzstyle{repository-atdg} = [rectangle, draw, thick, double, fill=gray!30, text width=7em, text centered, rounded corners, minimum height=4em]
-    \tikzstyle{repository-atsp} = [rectangle, draw, thick, double, fill=gray!50, text width=7em, text centered, rounded corners, minimum height=4em]
+    \tikzstyle{repository-atsp} = [rectangle, draw, thick, double, fill=gray!60, text width=7em, text centered, rounded corners, minimum height=4em]
 
     % SECTION: Define the line styles
 
@@ -21,8 +21,8 @@
 
       % NODE: sbst-analysis R package
       \node [repository] (sbst-analysis) {sbst-analysis \\ \faGithub};
-      \node [repository-atdg, right of=sbst-analysis] (atdg-analysis) {atdg-analysis \\ \faGithub~or \faGit};
-      \node [repository-atsp, below of=atdg-analysis] (atsp-analysis) {atsp-analysis \\ \faGithub~or \faGit};
+      \node [repository-atdg, right of=sbst-analysis, yshift=4em] (atdg-analysis) {atdg-analysis \\ \faGithub~or \faGit};
+      \node [repository-atsp, right of=sbst-analysis, yshift=-4em] (atsp-analysis) {atsp-analysis \\ \faGithub~or \faGit};
 
       % SECTION: Create all of the paths between the nodes
       \path [line] (sbst-analysis) -- (atdg-analysis);
