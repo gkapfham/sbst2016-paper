@@ -10,33 +10,54 @@
     \tikzstyle{repository} = [rectangle, draw, thick, double, fill=gray!10, text width=7em, text centered, rounded corners, minimum height=4em]
     \tikzstyle{repository-atdg} = [rectangle, draw, thick, double, fill=gray!30, text width=7em, text centered, rounded corners, minimum height=4em]
     \tikzstyle{repository-atsp} = [rectangle, draw, thick, double, fill=gray!60, text width=7em, text centered, rounded corners, minimum height=4em]
-    \tikzstyle{report-atdg} = [rectangle, draw, thick, fill=gray!30, text width=7em, text centered, rounded corners, minimum height=4em]
-    \tikzstyle{report-atsp} = [rectangle, draw, thick, fill=gray!60, text width=7em, text centered, rounded corners, minimum height=4em]
+    \tikzstyle{report-atdg} = [rectangle, draw, thick, double, fill=gray!30, text width=7em, text centered, rounded corners, minimum height=4em]
+    \tikzstyle{report-atsp} = [rectangle, draw, thick, double, fill=gray!60, text width=7em, text centered, rounded corners, minimum height=4em]
+    \tikzstyle{report-atdg-result} = [rectangle, draw, thick, fill=gray!30, text width=7em, text centered, rounded corners, minimum height=4em]
+    \tikzstyle{report-atsp-result} = [rectangle, draw, thick, fill=gray!60, text width=7em, text centered, rounded corners, minimum height=4em]
+    \tikzstyle{process} = [rectangle, draw, thick, fill=gray!10, text width=7em, text centered, minimum height=4em]
 
     % SECTION: Define the line styles
 
-    \tikzstyle{line} = [draw, thick, -stealth', scale=8]
+    \tikzstyle{line} = [draw, thick, double, -stealth]
+    \tikzstyle{extra-line} = [draw, thick, -stealth]
 
     \begin{tikzpicture}[node distance = 10em, auto]
 
       % SECTION: Create all of the nodes that will exist in the figure
+
+      % REPOSITORIES
       \node [repository] (sbst-analysis) {sbst-analysis \\ \vspace*{.25em}\faCode~in \faGithubAlt};
       \node [repository-atdg, right of=sbst-analysis, yshift=4em] (atdg-analysis) {atdg-analysis \\ \vspace*{.25em} \faCode~+~\faDatabase~in \faGit};
       \node [repository-atsp, right of=sbst-analysis, yshift=-4em] (atsp-analysis) {atsp-analysis \\ \vspace*{.25em} \faCode~+~\faDatabase~in \faGit};
+
+      % REPORTS
       \node [report-atdg, right of=atdg-analysis] (atdg-report) {atdg-report \\ \vspace*{.25em} \faCode~in \faGit};
       \node [report-atsp, right of=atsp-analysis] (atsp-report) {atsp-report \\ \vspace*{.25em} \faCode~in \faGit};
 
+      % COMPILERS
+      \node [process, right of=sbst-analysis, xshift=20em] (compiler) {RMarkdown \\ Compiler};
+
+      % REPORT RESULTS
+      \node [report-atdg-result, right of=compiler, yshift=4em] (atdg-report-result)
+        {atsp-report-result \\ \vspace*{.25em} \faBarChart~+~\faColumns~+~\faCog};
+      \node [report-atsp-result, right of=compiler, yshift=-4em] (atsp-report-result)
+        {atsp-report-result \\ \vspace*{.25em} \faBarChart~+~\faColumns~+~\faCog};
+
       % SECTION: Create all of the paths between the nodes
-      \path [line] (sbst-analysis) -- (atdg-analysis);
-      \path [line] (sbst-analysis) -- (atsp-analysis);
-      \path [line] (atdg-analysis) -- (atdg-report);
-      \path [line] (atsp-analysis) -- (atsp-report);
+      \path [line] (sbst-analysis) -- (atdg-analysis) node[draw=none,fill=none,font=\scriptsize,midway,below] {};
+      \path [line] (sbst-analysis) -- (atsp-analysis) node[draw=none,fill=none,font=\scriptsize,midway,below] {};
+      \path [line] (atdg-analysis) -- (atdg-report) node[draw=none,fill=none,font=\scriptsize,midway,below] {};
+      \path [line] (atsp-analysis) -- (atsp-report) node[draw=none,fill=none,font=\scriptsize,midway,below] {};
+      \path [extra-line] (atdg-report) -- (compiler);
+      \path [extra-line] (atsp-report) -- (compiler);
+      \path [extra-line] (compiler) -- (atdg-report-result);
+      \path [extra-line] (compiler) -- (atsp-report-result);
 
-    \end{tikzpicture}
+      \end{tikzpicture}
 
-  \end{center}
+    \end{center}
 
-  \caption{Shared code repositories to support the analysis of data from experiments with search-based software testing
-  tools.}~\label{fig:statistical_repositories}
+    \caption{Shared code repositories to support the analysis of data arising from experiments with search-based software testing
+    tools.}~\label{fig:statistical_repositories}
 
-\end{figure*}
+  \end{figure*}
