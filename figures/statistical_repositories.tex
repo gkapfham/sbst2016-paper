@@ -18,12 +18,11 @@
       % SECTION: Create all of the nodes that will exist in the figure
 
       % NODE: sbst-analysis R package
-      \node [repository] (sbst-analysis) {sbst-analysis};
-
-      \node [repository, right of=sbst-analysis] (identify) {identify candidate models};
+      \node [repository] (sbst-analysis) {sbst-analysis \faGithub};
+      \node [repository, right of=sbst-analysis] (atdg-analysis) {atdg-analysis \faGithub};
 
       % SECTION: Create all of the paths between the nodes
-      \path [line] (sbst-analysis) -- (identify);
+      \path [line] (sbst-analysis) -- (atdg-analysis);
 
     \end{tikzpicture}
 
