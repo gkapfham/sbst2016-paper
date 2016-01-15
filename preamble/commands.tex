@@ -1,0 +1,191 @@
+%!TEX root=../ast2016.tex
+
+% Important numbers
+\newcommand{\numschemas}{nine\xspace}
+
+% Highlight outstanding issues
+\newcommand{\todo}[1]{{\color{red}$<$TODO: #1$>$}}
+\newcommand{\query}[1]{{\color{blue}$<$QUERY: #1$>$}}
+\newcommand{\answer}[1]{{\color{ForestGreen}$<$ANSWER: #1$>$}}
+\newcommand{\thesis}[1]{{\color{Plum}$<$THESIS PROSE: #1$>$}}
+\newcommand{\paper}[2]{{\color{Orange}$<$#1: #2$>$}}
+
+% Definition-type environments
+\newtheorem{definition}{Definition}
+\newtheorem{criterion}{Criterion}
+
+% Extra heading levels
+\newcommand{\inlineheading}[1]{\vspace{1ex}{\noindent}{\bf #1.}~}
+\newcommand{\secondaryinlineheading}[1]{\vspace{1ex}{\noindent}{\it #1.}~}
+
+% Code style macros
+\newcommand{\sql}[1]{{\normalfont{\texttt{#1}}}} % added \normalfont, so that SQL is not italicized inside definitions
+\newcommand{\smsql}[1]{{\scriptsize{\sql{#1}}}}
+\newcommand{\quot}[1]{\textquotesingle #1\textquotesingle}
+\newcommand{\sqlquot}[1]{\sql{\quot{#1}}}
+
+% Textual shortcuts
+\newcommand{\sa}{{\it SchemaAnalyst}\xspace}
+\newcommand{\SA}{\sa}
+\newcommand{\SchemaAnalyst}{\sa}
+\newcommand{\schemaanalyst}{\sa}
+\newcommand{\sawebsite}{\url{http://www.schemaanalyst.org}}
+
+\newcommand{\Original}{standard\xspace}
+\newcommand{\Standard}{standard\xspace}
+\newcommand{\original}{standard\xspace}
+\newcommand{\standard}{standard\xspace}
+\newcommand{\Virtual}{virtual\xspace}
+\newcommand{\virtual}{virtual\xspace}
+
+\newcommand{\VirtualMutationAnalysis}{Virtual Mutation Analysis\xspace}  % for captions and headings
+\newcommand{\VMA}{\VirtualMutationAnalysis}                              % for captions and headings
+\newcommand{\virtualmutationanalysis}{virtual mutation analysis\xspace}  % for prose
+\newcommand{\Virtualmutationanalysis}{Virtual mutation analysis\xspace}  % for prose
+\newcommand{\vma}{\virtualmutationanalysis}                              % for prose
+\newcommand{\Vma}{\Virtualmutationanalysis}                              % for prose
+
+\newcommand{\TimeConstrainedMutation}{Time-Constrained Mutation\xspace}  % for captions and headings
+\newcommand{\TCM}{\TimeConstrainedMutation}                              % for captions and headings
+\newcommand{\timeconstrainedmutation}{time-constrained mutation analysis\xspace}  % for prose
+\newcommand{\tcm}{\timeconstrainedmutation}                              % for captions and headings
+\newcommand{\tc}{time-constrained\xspace}                                % for prose
+
+\newcommand{\NistWeather}{NistWeather\xspace}
+\newcommand{\NW}{\NistWeather}
+
+\newcommand{\DBMonster}{{\it DBMonster}\xspace}
+\newcommand{\avm}{{\it AVM}\xspace}
+\newcommand{\AVM}{\avm}
+\newcommand{\theAVM}{the \avm}
+\newcommand{\TheAVM}{The \avm}
+\newcommand{\rand}{{\it Random$^{+}$}\xspace}
+\newcommand{\random}{\rand}
+\newcommand{\Random}{\rand}
+\newcommand{\rnd}{\rand}
+
+\newcommand{\postgres}{PostgreSQL\xspace}
+\newcommand{\postgresql}{\postgres}
+\newcommand{\Postgres}{\postgres}
+\newcommand{\PostgreSQL}{\postgres}
+\newcommand{\hypersql}{HyperSQL\xspace}
+\newcommand{\hsqldb}{\hypersql}
+\newcommand{\HSQLDB}{\hypersql}
+\newcommand{\HyperSQL}{\hypersql}
+\newcommand{\postgreshypersql}{\postgres/\hypersql}
+\newcommand{\sqlite}{SQLite\xspace}
+\newcommand{\SQLite}{\sqlite}
+
+\newcommand{\CHECK}{\sql{CHECK}\xspace}
+\newcommand{\CHECKs}{\sql{CHECK}s\xspace}
+\newcommand{\CC}{\CHECK constraint\xspace}
+\newcommand{\CCs}{\CHECK constraints\xspace}
+
+\newcommand{\SELECT}{\sql{SELECT}\xspace}
+\newcommand{\SELECTs}{\sql{SELECT}s\xspace}
+
+\newcommand{\fk}{foreign key\xspace}
+\newcommand{\fks}{foreign keys\xspace}
+\newcommand{\FK}{\sql{FOREIGN} \sql{KEY}\xspace}
+\newcommand{\FKs}{\sql{FOREIGN} \sql{KEY}s\xspace}
+\newcommand{\FKC}{\FK constraint\xspace}
+\newcommand{\FKCs}{\FK constraints\xspace}
+
+\newcommand{\NOTNULL}{\sql{NOT} \sql{NULL}\xspace}
+\newcommand{\NOTNULLs}{\sql{NOT} \sql{NULL}s\xspace}
+\newcommand{\NNC}{\sql{NOT} \sql{NULL} constraint\xspace}
+\newcommand{\NNCs}{\sql{NOT} \sql{NULL} constraints\xspace}
+
+\newcommand{\pk}{primary key\xspace}
+\newcommand{\pks}{primary keys\xspace}
+\newcommand{\PK}{\sql{PRIMARY} \sql{KEY}\xspace}
+\newcommand{\PKs}{\sql{PRIMARY} \sql{KEY}s\xspace}
+\newcommand{\PKC}{\PK constraint\xspace}
+\newcommand{\PKCs}{\PK constraints\xspace}
+
+\newcommand{\UNIQUE}{\sql{UNIQUE}\xspace}
+\newcommand{\UC}{\UNIQUE constraint\xspace}
+\newcommand{\UNIQUEs}{\sql{UNIQUE}s\xspace}
+\newcommand{\UCs}{\UNIQUE constraints\xspace}
+
+\newcommand{\INSERT}{\sql{INSERT}\xspace}
+\newcommand{\INSERTs}{\sql{INSERT}s\xspace}
+\newcommand{\NULL}{\sql{NULL}\xspace}
+\newcommand{\NULLs}{\sql{NULL}s\xspace}
+
+\newcommand{\icp}{integrity constraint predicate\xspace}
+\newcommand{\icps}{integrity constraint predicates\xspace}
+\newcommand{\nc}{null condition\xspace}
+\newcommand{\cc}{constraint condition\xspace}
+\newcommand{\ccs}{constraint conditions\xspace}
+
+\newcommand{\mannwhitney}{Mann--Whitney {\it U} test\xspace}
+\newcommand{\wilcoxon}{Wilcoxon rank-sum test\xspace}
+\newcommand{\pvalue}{{\it p}-value\xspace}
+\newcommand{\bfpvalue}{\textbf{\textit{p}-value}\xspace}
+\newcommand{\atwelve}{\^{A}\textsubscript{12}\xspace}
+\newcommand{\bfatwelve}{\textbf{\textit{\^{A}}}$\mathbf{_{12}}$\xspace}
+\newcommand{\taub}{{\large$\tau_{b}$}}
+
+\newcommand{\etal}{et al.\xspace}
+
+% Floats
+\newcommand{\Figure}[1]{Figure~\ref{#1}\xspace}
+\newcommand{\Section}[1]{Section~\ref{#1}\xspace}
+\newcommand{\Table}[1]{Table~\ref{#1}\xspace}
+
+%% To help ensure consistent float scaling
+\def \algorithmfigurescalefactor {0.7}
+\def \tablescalefactor {0.85}
+\def \inlinescalefactor {0.82}
+
+%% Rotated table column type
+\newcolumntype{R}[2]{%
+    >{\adjustbox{minipage=6em,angle=#1,lap=\width-(#2)}\bgroup}%
+    l%
+    <{\egroup}%
+}
+\newcommand*\rot{\multicolumn{1}{R{60}{1.5em}}}
+
+%% Highlight command for coloured highlight in listings
+\newcommand{\reducedstrut}{\vrule width 0pt height \ht\strutbox depth \dp\strutbox\relax}
+\newcommand{\highlight}[1]{%
+  \begingroup
+  \setlength{\fboxsep}{0pt}%
+  \colorbox{red!20}{\reducedstrut#1\/}%
+  \endgroup
+}
+
+% Equations
+\newcommand{\relnull}{\sql{NULL}}
+\newcommand{\eqnull}{= \relnull}
+\newcommand{\existsinrel}[2]{\exists \inrel{#1}{#2}}
+\newcommand{\forallinrel}[2]{\forall \inrel{#1}{#2}}
+\newcommand{\inrel}[2]{#1 \in \: #2}
+\newcommand{\neqnull}{\neq \relnull}
+\newcommand{\select}[2]{#1 (#2)}
+\newcommand{\selecteqnull}[2]{\select{#1}{#2} \eqnull}
+\newcommand{\selectneqnull}[2]{\select{#1}{#2} \neqnull}
+\newcommand{\selectneq}[3]{\select{#1}{#3} \: \neq \: \select{#2}{#3}}
+\newcommand{\selecteq}[3]{\select{#1}{#3} \: = \: \select{#2}{#3}}
+\newcommand{\selecteqexp}[4]{\select{#1}{#3} \: = \: \select{#2}{#4}}
+\newcommand{\smallwedge}{\: \wedge \:}
+\newcommand{\smallvee}{\: \vee \:}
+
+\let\oldemptyset\emptyset
+\let\emptyset\varnothing
+
+% Algorithms in figures
+\newcommand{\tinybullet}{$\vcenter{\hbox{\tiny$\bullet$}} \;$}
+\newcommand{\atab}{\hspace{3ex}}
+\newcommand{\wheretab}{\hspace{2ex}}
+\newcommand{\exptab}{\hspace{2.5ex}}
+\newcommand{\smallvspace}{\vspace{0.5ex}}
+\newcommand{\closeblock}{\vspace{1ex}}
+\newcommand{\closemajorblock}{\vspace{2ex}}
+
+% Comments
+\newcommand{\rem}[1]{}
+
+% RQs
+\newcommand{\conclusion}[2]{\vspace{1mm} \noindent {\bf Conclusion for #1:} #2}
