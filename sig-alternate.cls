@@ -883,7 +883,7 @@
  }
  \dimen0=\ht\@acmtitlebox
  % GMK changed this command
- \advance\dimen0 by -8.25pc\relax % Increased space for title box -- KBT
+ \advance\dimen0 by -9.25pc\relax % Increased space for title box -- KBT
  \unvbox\@acmtitlebox
  \ifdim\dimen0<0.0pt\relax\vskip-\dimen0\fi}
 \fi
