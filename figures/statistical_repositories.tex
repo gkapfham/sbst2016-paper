@@ -12,6 +12,8 @@
     \tikzstyle{repository-atsp} = [rectangle, draw, thick, double, fill=gray!60, text width=7em, text centered, rounded corners, minimum height=4em]
     \tikzstyle{report-atdg} = [rectangle, draw, thick, double, fill=gray!30, text width=7em, text centered, rounded corners, minimum height=4em]
     \tikzstyle{report-atsp} = [rectangle, draw, thick, double, fill=gray!60, text width=7em, text centered, rounded corners, minimum height=4em]
+    \tikzstyle{paper-atdg} = [rectangle, draw, thick, double, fill=gray!30, text width=7em, text centered, rounded corners, minimum height=4em]
+    \tikzstyle{paper-atsp} = [rectangle, draw, thick, double, fill=gray!60, text width=7em, text centered, rounded corners, minimum height=4em]
     \tikzstyle{report-atdg-result} = [rectangle, draw, thick, fill=gray!30, text width=7em, text centered, rounded corners, minimum height=4em]
     \tikzstyle{report-atsp-result} = [rectangle, draw, thick, fill=gray!60, text width=7em, text centered, rounded corners, minimum height=4em]
     \tikzstyle{process} = [rectangle, draw, thick, fill=gray!10, text width=7em, text centered, minimum height=4em]
@@ -38,26 +40,33 @@
       \node [report-atsp, right of=atsp-analysis] (atsp-report) {atsp-report \\ \vspace*{.25em} \faCode~+~\faEdit~in \faGit};
 
       % COMPILERS
-      \node [process, right of=sbst-analysis, xshift=20em] (compiler) {RMarkdown \\ Compiler};
+      \node [process, right of=sbst-analysis, xshift=20em] (markdown-compiler) {RMarkdown \\ Compiler};
+      % \node [process, above of=markdown-compiler] (latex-compiler-one) {\LaTeX \\ Compiler};
+      % \node [process, below of=markdown-compiler] (latex-compiler-two) {\LaTeX \\ Compiler};
+
+      % PAPERS
+      \node [paper-atdg, above of=markdown-compiler, yshift=-2em] (sbst-paper) {SBST Paper\\ \vspace*{.25em} \faCode~+~\faEdit~in \faGit};
+      \node [paper-atsp, below of=markdown-compiler, yshift=2em] (ssbse-paper) {SSBSE Paper\\ \vspace*{.25em} \faCode~+~\faEdit~in \faGit};
 
       % REPORT RESULTS
-      \node [report-atdg-result, right of=compiler, yshift=4em] (atdg-report-result)
-        {atsp-report-result \\ \vspace*{.25em} \faBarChart~+~\faColumns~+~\faCog};
-      \node [report-atsp-result, right of=compiler, yshift=-4em] (atsp-report-result)
-        {atsp-report-result \\ \vspace*{.25em} \faBarChart~+~\faColumns~+~\faCog};
+      \node [report-atdg-result, right of=markdown-compiler, yshift=4em] (atdg-report-result)
+        {atsp-report-result \\ \vspace*{.25em} \faBarChart~+~\faColumns~+~\faEdit};
+      \node [report-atsp-result, right of=markdown-compiler, yshift=-4em] (atsp-report-result)
+        {atsp-report-result \\ \vspace*{.25em} \faBarChart~+~\faColumns~+~\faEdit};
 
       % SECTION: Create all of the paths between the nodes
       \path [line] (sbst-analysis) -- (atdg-analysis) node[draw=none,fill=none,font=\scriptsize,midway,below] {};
       \path [line] (sbst-analysis) -- (atsp-analysis) node[draw=none,fill=none,font=\scriptsize,midway,below] {};
       \path [line] (atdg-analysis) -- (atdg-report) node[draw=none,fill=none,font=\scriptsize,midway,below] {};
       \path [line] (atsp-analysis) -- (atsp-report) node[draw=none,fill=none,font=\scriptsize,midway,below] {};
-      \path [dashed-line] (atdg-report) -- (compiler);
-      \path [dashed-line] (atsp-report) -- (compiler);
-      \path [dashed-line] (compiler) -- (atdg-report-result);
-      \path [dashed-line] (compiler) -- (atsp-report-result);
-
+      \path [dashed-line] (atdg-report) -- (markdown-compiler);
+      \path [dashed-line] (atsp-report) -- (markdown-compiler);
+      \path [dashed-line] (markdown-compiler) -- (atdg-report-result);
+      \path [dashed-line] (markdown-compiler) -- (atsp-report-result);
       \path [single-line] (sbst-analysis) -- (sbst-analysis-fork-one);
       \path [single-line] (sbst-analysis) -- (sbst-analysis-clone-one);
+      \path [single-line] (atdg-report-result) -- (sbst-paper);
+      \path [single-line] (atsp-report-result) -- (ssbse-paper);
 
       \end{tikzpicture}
 
