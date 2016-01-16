@@ -19,7 +19,8 @@
     % SECTION: Define the line styles
 
     \tikzstyle{line} = [draw, thick, double, -stealth]
-    \tikzstyle{extra-line} = [draw, thick, -stealth]
+    \tikzstyle{single-line} = [draw, thick, -stealth]
+    \tikzstyle{dashed-line} = [draw, thick, dashed, -stealth]
 
     \begin{tikzpicture}[node distance = 10em, auto]
 
@@ -29,6 +30,8 @@
       \node [repository] (sbst-analysis) {sbst-analysis \\ \vspace*{.25em}\faCode~in \faGithubAlt};
       \node [repository-atdg, right of=sbst-analysis, yshift=4em] (atdg-analysis) {atdg-analysis \\ \vspace*{.25em} \faCode~+~\faDatabase~in \faGit};
       \node [repository-atsp, right of=sbst-analysis, yshift=-4em] (atsp-analysis) {atsp-analysis \\ \vspace*{.25em} \faCode~+~\faDatabase~in \faGit};
+      \node [repository, above of=sbst-analysis, yshift=-2em] (sbst-analysis-fork-one) {sbst-analysis \\ \vspace*{.25em}\faCodeFork~in \faGithubAlt};
+      \node [repository, below of=sbst-analysis, yshift=2em] (sbst-analysis-clone-one) {sbst-analysis \\ \vspace*{.25em}\faCopy~in \faGit};
 
       % REPORTS
       \node [report-atdg, right of=atdg-analysis] (atdg-report) {atdg-report \\ \vspace*{.25em} \faCode~in \faGit};
@@ -48,10 +51,13 @@
       \path [line] (sbst-analysis) -- (atsp-analysis) node[draw=none,fill=none,font=\scriptsize,midway,below] {};
       \path [line] (atdg-analysis) -- (atdg-report) node[draw=none,fill=none,font=\scriptsize,midway,below] {};
       \path [line] (atsp-analysis) -- (atsp-report) node[draw=none,fill=none,font=\scriptsize,midway,below] {};
-      \path [extra-line] (atdg-report) -- (compiler);
-      \path [extra-line] (atsp-report) -- (compiler);
-      \path [extra-line] (compiler) -- (atdg-report-result);
-      \path [extra-line] (compiler) -- (atsp-report-result);
+      \path [dashed-line] (atdg-report) -- (compiler);
+      \path [dashed-line] (atsp-report) -- (compiler);
+      \path [dashed-line] (compiler) -- (atdg-report-result);
+      \path [dashed-line] (compiler) -- (atsp-report-result);
+
+      \path [single-line] (sbst-analysis) -- (sbst-analysis-fork-one);
+      \path [single-line] (sbst-analysis) -- (sbst-analysis-clone-one);
 
       \end{tikzpicture}
 
