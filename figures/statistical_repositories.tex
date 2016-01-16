@@ -55,10 +55,10 @@
         {atsp-report-result \\ \vspace*{.25em} \faBarChart~+~\faColumns~+~\faEdit};
 
       % SECTION: Create all of the paths between the nodes
-      \path [line] (sbst-analysis) -- (atdg-analysis) node[draw=none,fill=none,font=\scriptsize,midway,below] {};
-      \path [line] (sbst-analysis) -- (atsp-analysis) node[draw=none,fill=none,font=\scriptsize,midway,below] {};
-      \path [line] (atdg-analysis) -- (atdg-report) node[draw=none,fill=none,font=\scriptsize,midway,below] {};
-      \path [line] (atsp-analysis) -- (atsp-report) node[draw=none,fill=none,font=\scriptsize,midway,below] {};
+      \path [line] (sbst-analysis) -- (atdg-analysis);
+      \path [line] (sbst-analysis) -- (atsp-analysis);
+      \path [line] (atdg-analysis) -- (atdg-report);
+      \path [line] (atsp-analysis) -- (atsp-report);
       \path [dashed-line] (atdg-report) -- (markdown-compiler);
       \path [dashed-line] (atsp-report) -- (markdown-compiler);
       \path [dashed-line] (markdown-compiler) -- (atdg-report-result);
@@ -68,9 +68,16 @@
       \path [single-line] (atdg-report-result) -- (sbst-paper);
       \path [single-line] (atsp-report-result) -- (ssbse-paper);
 
+      % SECTION: The legend for the meaning of all of the lines
+      \path [single-line] (2,-3.5) -- (3,-3.5) node[draw=none,fill=none,font=\scriptsize,midway,below] {Fork, clone, or copy};
+      \path [line] (4.5,-3.5) -- (5.5,-3.5) node[draw=none,fill=none,font=\scriptsize,midway,below] {devtools::install};
+      \path [dashed-line] (7,-3.5) -- (8,-3.5) node[draw=none,fill=none,font=\scriptsize,midway,below] {Input or output};
+
       \end{tikzpicture}
 
     \end{center}
+
+    \vspace*{-1em}
 
     \caption{Shared code repositories to support the analysis of data arising from experiments with search-based software testing
     tools.}~\label{fig:statistical_repositories}
