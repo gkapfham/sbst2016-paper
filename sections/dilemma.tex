@@ -5,14 +5,16 @@
 \label{sec:dilemma}
 
 To demonstrate the need for that the SBST community has for shared repositories of statistical analysis code, we develop
-two fictional examples loosely based on past experiences in the development and evaluation of algorithms that use
+two fictional examples loosely based on past experiences with the development and evaluation of algorithms that use
 randomization.
 
-First, an SBST researcher named Mark wants to calculate \atwelve~and remembers that there is some R code in the
+First, an SBST researcher named Tom wants to calculate \atwelve~and remembers that there is some R code in the
 ``Hitchhiker's Guide'' paper. Yet, to his dismay, the paper does not include a self-contained function for computing
 an effect size and furthermore, the provided code and equations are on separate pages of the paper. After puzzling over
-curiosities such as the purpose of the {\tt seq\_along} function, Mark decides to see if there is an R package that
-already provides a function for computing \atwelve~and discovers the ``effsize''. Much to his chagrin, Mark realises
-that the default code for \atwelve~is different from what Arcuri and Briand recommend.
+curiosities such as the purpose of the {\tt seq\_along} function, Tom decides to see if there is an R package that
+already provides a function for computing \atwelve~and discovers ``effsize''. Much to his chagrin, Tom realises
+that the default code for \atwelve~is different from what Arcuri and Briand recommend. Wanting to ensure that he
+performs the correct computation, Tom writes tests to confirm that the code he thinks the ``Guide'' recommends is
+numerically equivalent to that which is provided by the ``effsize'' package.
 
 
