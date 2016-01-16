@@ -28,13 +28,13 @@ R package and the benefits it brings to data analysis, he faces a deadline and d
 \atwelve~values based on un-transformed timings.
 
 In the second scenario, an SBST researcher named Elaine wants to perform hypothesis testing for the data that she has
-collected about a ATSP algorithm. In this data set, that was curated with assistance from her industrial partners, it is
-possible to discern when one test suite ordering is better than another while the difference between values is not
-meaningful. Elaine consults the ``Hitchhiker's Guide'' and correctly decides to use a non-parametric test, ultimately
-picking the {\tt wilcox.test} function mentioned in Section 11 of the paper. After scanning the documentation for this
-function, guessing that it is probably suitable for her purposes, and performing her statistical analysis, Elaine writes and
-submits her paper. Owing, at least in part, to the fact that Section 11 of the ``Guide'' does not define the phrase
-``interval-scale results'', Elaine later learns from the reviews of her paper that industry-collected data is ordinal and
-as such she incorrectly applied {\tt wilcox.test}.
+collected about a ATSP algorithm.  In this data set, which was curated with assistance from her industrial partners, it
+is possible to discern when one test suite ordering is better than another while the difference between values is not
+meaningful. Elaine consults the ``Hitchhiker's Guide'' and decides to use the {\tt wilcox.test} function mentioned in
+Section 11 of the paper. After scanning R's documentation for this function, guessing that it is probably suitable for
+her purposes, Elaine performs the statistical analysis. Owing, at least in part, to the fact that Section 11 of the
+``Guide'' uses the phrase ``interval-scale results'', Elaine has doubts as to whether it is valid to apply the chosen
+test to her ordinal data. This doubt, and the space constraints of the conference to which she submits her paper,
+convince her to only publish a few of the p-values from the hypothesis tests.
 
 
