@@ -25,13 +25,14 @@ Since the repository is publicly available, inquisitive researchers can easily c
 their operation and assumption(s). When new analysis ideas emerge (e.g., the transformations proposed by
 Neumann~\etal~\cite{Neumann2015}), then the developers of these new methods can fork sbst-analysis (as shown by the
 \codeforkgit~label), add new functions or modify the existing ones, and submit a merge request back to the maintainers
-of sbst-analysis; once approved the new code will be available to the community.
+of sbst-analysis; once approved the new code will be available to the community, thereby speeding the uptake of this new
+analysis idea.
 
 Now, let's assume that sbst-analysis exists and Tom decides to use it to help him calculate effect sizes. Tom follows
 the easy-to-understand recommendations by Wickham and creates his own R package of functions called ``atdg-analysis''
 which installs sbst-analysis as its main provider of functionality and contains all of the needed data, thus warranting
-the \codedatagit~symbol in Figure~\ref{fig:statistical_repositories}. Since sbst-analysis uses ``dplyr'' package for the
-efficient manipulation of large data sets, the code in Tom's package completes the data advocated data transformations.
+the \codedatagit~symbol in Figure~\ref{fig:statistical_repositories}. Since sbst-analysis uses R's ``dplyr'' package for
+the efficient manipulation of large data sets, the code in Tom's package completes the advocated data transformations.
 Tom can now see that the un-transformed data leads to effect size supporting the opposite conclusion of the
 \atwelve~that was computed with the transformed data.
 
