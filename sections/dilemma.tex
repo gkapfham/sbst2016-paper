@@ -12,12 +12,12 @@ randomization.
 
 First, an SBST researcher named Tom wants to calculate \atwelve~and remembers that there is some R code in the
 ``Hitchhiker's Guide'' paper. Yet, to his dismay, the paper does not include a self-contained function for computing an
-effect size and furthermore, the provided code and equations are on separate pages of the paper. After puzzling over
+effect size and furthermore, the necessary code and equations are on separate pages of the paper. After puzzling over
 curiosities such as the purpose of the {\tt seq\_along} function, Tom decides to see if there is an R package that
-already provides a function for computing \atwelve~and discovers ``effsize''. Much to his chagrin, Tom realises that the
-default code for \atwelve~is different from what Arcuri and Briand recommend. Wanting to ensure that he calculates the
+already provides a function for computing \atwelve~and finds ``effsize''. Much to his chagrin, Tom realises that the
+package's code for \atwelve~is different from what Arcuri and Briand recommend. Wanting to ensure that he calculates the
 effect size correctly, Tom writes tests to confirm that the code he thinks the ``Guide'' recommends is numerically
-equivalent to that which is provided by the ``effsize'' package.
+equivalent to that which is provided by the effsize package.
 
 The completion of Tom's analysis is further delayed when his colleague suggests that he read a recent article by
 Neumann~\etal~\cite{Neumann2015}, suggesting that Vargha-Delaney effect sizes be transformed to ensure that the correct
@@ -29,12 +29,12 @@ R package and the benefits it brings to data analysis, he faces a deadline and d
 
 In the second scenario, an SBST researcher named Elaine wants to perform hypothesis testing for the data that she has
 collected about a ATSP algorithm.  In this data set, which was curated with assistance from her industrial partners, it
-is possible to discern when one test suite ordering is better than another while the difference between values is not
-meaningful. Elaine consults the ``Hitchhiker's Guide'' and decides to use the {\tt wilcox.test} function mentioned in
-Section 11 of the paper. After scanning R's documentation for this function, guessing that it is probably suitable for
-her purposes, Elaine performs the statistical analysis. Owing, at least in part, to the fact that Section 11 of the
-``Guide'' uses the phrase ``interval-scale results'', Elaine has doubts as to whether it is valid to apply the chosen
-test to her ordinal data. This doubt, and the space constraints of the conference to which she submits her paper,
-convince her to only publish a few of the p-values from the hypothesis tests.
+is possible to discern when one test suite ordering is better than another even though the difference between suite
+scores is not meaningful. Elaine consults the ``Hitchhiker's Guide'' and decides to use the {\tt wilcox.test} function
+mentioned in Section 11 of the paper. After scanning R's documentation for this function and guessing that it is
+suitable for her purposes, Elaine performs the statistical analysis. Owing, at least in part, to the fact that Section
+11 of the ``Guide'' uses the phrase ``interval-scale results'', Elaine questions whether it is valid to apply the chosen
+test to her ordinal data. This doubt, and the page limits of the conference to which she submits her paper, lead her to
+only report a few of the p-values from the hypothesis tests.
 
 
