@@ -10,16 +10,17 @@
 
 Along with arguing that ``hitchikers need free vehicles'' --- or that SBST researchers need freely availble software as
 a means for improving their statistical analyses --- this paper also puts forth several practical suggestions for
-improving the functions ultimately furnished by repositories like sbst-analysis and adtdg-analysis.
+improving the functions ultimately furnished by repositories like sbst-analysis and atsp-analysis.
 
 As already mentioned, Tom and Elaine should use the expressive and efficient functions in dplyr to summarise and
 transform the data provided with their R packages. In support of their use of dplyr's functions, they should also ensure
 that their data sets are organized in a ``tidy'' fashion where ``each variable is a column, each observation is a row,
 and each type of observational unit is a table''~\cite{Wickham2014}. When Tom and Elaine perform a statistical analysis,
-they should, whenever possible, transform it's output to a data structure amenable to further analysis by using packages
-such a ``broom''. Also, when SBST researchers add visualisation functions to the R packages, they should consider the
-use of the sophisticated ``ggplot2'' package. Finally, SBST researchers should realise that defects in their analysis
-functions are a threat to the validity of their results and, as such, use R packages such as ``testthat'' to write test
-cases to establish a confidence in the correctness of their transformation, analysis, and graphing functions.
+they should, whenever possible, transform it's output to a data structure amenable to further analysis by using R
+packages such a ``broom''. Also, when SBST researchers add visualisation functions to their R packages, they should
+consider the use of the sophisticated ``ggplot2'' package. Finally, SBST researchers should realise that defects in
+their analysis functions are a threat to the validity of their empirical results and, as such, use R packages such as
+``testthat'' to write test cases that establish a confidence in the correctness of their transformation, statistical
+analysis, and graphing functions.
 
 
