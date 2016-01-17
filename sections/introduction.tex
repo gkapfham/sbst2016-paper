@@ -12,17 +12,17 @@ reorders tests during regression testing will randomly mutate portions of a cand
 finding the best ordering~\cite{Walcott2006}.
 
 Scientists must carefully design and conduct the experiments evaluating these algorithms to ensure that they account for
-any inherent randomness. It is additionally important that these researchers employ the right methods to analyse the results
+any inherent randomness. It is additionally important that these individuals employ the right methods to analyse the results
 from these experiments. In the year 2011, Arcuri and Briand published a conference paper outlining some practical
 guidelines for using statistical methods to analyse randomized algorithms~\cite{Arcuri2011}, like those often used in
 SBST. The journal version of this paper, entitled ``A Hitchhiker's Guide to Statistical Tests for
-Assessing Randomized Algorithms in Software Engineering''~\cite{Arcuri2014}, expands on the earlier paper while still
-providing practical ways to rigorously analyse empirical results.
+Assessing Randomized Algorithms in Software Engineering''~\cite{Arcuri2014}, expands on the earlier paper 
+by further explaining ways to rigorously analyse empirical results.
 
 It is hard to underestimate the ways in which these two papers have benefited the SBST community. For instance, many
-SBST scientists now correctly use non-parametric \wilcoxon to perform hypothesis testing. To complement these
-significance tests, many researchers in the field use the nonparametric \atwelve statistic of Vargha and Delaney
-\cite{Vargha2000} to compute effect sizes, which determine the average probability that one approach ``out performs''
+SBST researchers now correctly use the non-parametric \wilcoxon to perform hypothesis testing. To complement these
+significance tests, many individuals in the field use the nonparametric \atwelve statistic of Vargha and Delaney
+\cite{Vargha2000} to compute effect sizes, thereby determining the average probability that one approach out performs
 another. While these two papers have achieved laudable ends, we argue that the subtleties of various statistical
 analyses might cause well-intentioned SBST researchers to make mistakes that compromise the validity of their empirical
 results. To this end, we argue for the improvement of methodological maturity in the SBST field through the development
