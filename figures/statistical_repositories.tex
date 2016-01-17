@@ -48,7 +48,7 @@
 
       % PAPERS
       \node [paper-atdg, above of=markdown-compiler, yshift=-2em] (sbst-paper) {SBST Paper\\ \vspace*{.25em} \faCode~+~\faEdit~in \faGit};
-      \node [paper-atsp, below of=markdown-compiler, yshift=2em] (ssbse-paper) {SSBSE Paper\\ \vspace*{.25em} \faCode~+~\faEdit~in \faGit};
+      \node [paper-atsp, below of=markdown-compiler, yshift=2em] (ssbse-paper) {SBST Paper\\ \vspace*{.25em} \faCode~+~\faEdit~in \faGit};
 
       % REPORT RESULTS
       \node [report-atdg-result, right of=markdown-compiler, yshift=4em] (atdg-report-result)
@@ -71,7 +71,7 @@
       \path [single-line] (atsp-report-result) -- (ssbse-paper);
 
       % SECTION: The legend for the meaning of all of the lines
-      \path [single-line] (1.75,-3.5) -- (2.75,-3.5) node[draw=none,fill=none,font=\scriptsize,midway,below] {Fork, clone, or copy};
+      \path [single-line] (1.75,-3.5) -- (2.75,-3.5) node[draw=none,fill=none,font=\scriptsize,midway,below] {Fork, clone or copy};
       \path [line] (4.5,-3.5) -- (5.5,-3.5) node[draw=none,fill=none,font=\scriptsize,midway,below] {R installation};
       \path [dashed-line] (7,-3.5) -- (8,-3.5) node[draw=none,fill=none,font=\scriptsize,midway,below] {Input or output};
 
