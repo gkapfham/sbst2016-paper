@@ -1,10 +1,10 @@
 % vim: ft=tex
 %!TEX root=sbst2016.tex
 
-\vspace*{-.5em}
+% \vspace*{-.5em}
 
-\section{Practical Suggestions}
-\label{sec:suggestions}
+% \section{Practical Suggestions}
+% \label{sec:suggestions}
 
 % each variable is a column, each observation is a row, and each type of observational unit is a table
 
@@ -12,13 +12,14 @@ Along with arguing that ``hitchikers need free vehicles'' --- or, in other words
 available software as a way to improve their statistical analyses --- this paper also puts forth several practical
 suggestions for improving the functions ultimately furnished by repositories like sbst-analysis and atsp-analysis.
 
+% When Tom and Elaine perform a statistical analysis, they should, whenever possible, transform it's output to a data
+% structure amenable to further analysis by using R packages such a ``broom''. Also, when SBST researchers add
+% visualisation functions to their R packages, they should consider the use of the sophisticated ``ggplot2'' package.
+
 As already mentioned, Tom and Elaine should use the expressive and efficient functions in dplyr to summarise and
 transform the data provided with their R packages. In support of their use of dplyr's functions, they should also ensure
 that their data sets are organized in a ``tidy'' fashion where ``each variable is a column, each observation is a row,
-and each type of observational unit is a table''~\cite{Wickham2014}. When Tom and Elaine perform a statistical analysis,
-they should, whenever possible, transform it's output to a data structure amenable to further analysis by using R
-packages such a ``broom''. Also, when SBST researchers add visualisation functions to their R packages, they should
-consider the use of the sophisticated ``ggplot2'' package. Finally, SBST researchers should realise that defects in
+and each type of observational unit is a table''~\cite{Wickham2014}.  Finally, SBST researchers should realise that defects in
 their analysis functions are a threat to the validity of their empirical results and, as such, use R packages such as
 ``testthat'' to write test cases establishing a confidence in the correctness of their data transformation, statistical
 analysis, and graphing functions.
