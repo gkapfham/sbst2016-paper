@@ -29,12 +29,12 @@ maintainers of sbst-analysis; once approved the new code will be available to th
 of this new analysis idea.
 
 Now, let's assume that sbst-analysis exists and Tom decides to use it to help him calculate effect sizes. Tom follows
-the easy-to-understand recommendations by Wickham and creates his own R package of functions called ``atdg-analysis''
-which installs sbst-analysis as its main provider of functionality and contains all of the needed data, thus warranting
-the \codedatagit~label in Figure~\ref{fig:statistical_repositories}. Since sbst-analysis uses R's dplyr package to
-efficiently manipulate large data sets, the code in Tom's package correctly completes the advocated data
-transformations.  Tom can now see that the un-transformed data leads to an effect size supporting the opposite
-conclusion of the \atwelve~that was computed with the transformed data.
+the easy-to-understand recommendations by Wickham and creates his own Git repository for an R package called
+``atdg-analysis'' that installs sbst-analysis as its main provider of functionality and contains all of the needed code
+and data, as shown by the \codedatagit~label. Since sbst-analysis uses R's dplyr package to efficiently manipulate large
+data sets, the code in Tom's package correctly completes the advocated data transformations.  Tom can now see that the
+un-transformed data leads to an effect size supporting the opposite conclusion of the \atwelve~that was computed with
+the transformed data.
 
 Moreover, Elaine might leverage the thorough documentation in sbst-analysis to discover that {\tt wilcox.test} is a
 correct analysis function for her ordinal data. At this point, both Elaine and Tom can use a standard like RMarkdown to
