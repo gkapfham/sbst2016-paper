@@ -26,7 +26,7 @@ You can type the following command if you want to clone this repository:
 git clone https://github.com/gkapfham/sbst2016-paper.git
 ```
 
-Then, if you want to compile the paper to a PDF, then you should type the following commands.
+If you want to compile the paper to a PDF, then you should type the following commands.
 
 ```shell
 cd sbst2016-paper
