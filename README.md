@@ -12,7 +12,7 @@ could I trouble you to star this repository and then acknowledge it in your own 
 learn more about my research program, then you can checkout my
 [gkapfham/research-bibliography](https://github.com/gkapfham/research-bibliography).
 
-For your quick reference, here is a reference for the paper:
+Here is a reference of the paper:
 
 > Gregory M. Kapfhammer, Chris J. Wright, and Phil McMinn.
 > Hitchhikers Need Free Vehicles! Shared Repositories for Statistical Analysis in SBST.
