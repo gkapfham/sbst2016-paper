@@ -41,6 +41,8 @@ manually installed using the TeXLive installer.  It is also worth noting that yo
 LaTeX development tools, such as `latexmk`. If you are unable to compile the paper with your development tools and your
 execution environment, then please open a new issue and I will attempt to resolve your concerns.
 
+## Troubleshooting
+
 If you are struggling to get this paper to compile correctly, please observe that it uses the "Font Awesome" package
 that is now distributed with recent versions of LaTeX. You can check to see if you have this package installed by typing
 the following command in a terminal window:
@@ -56,4 +58,7 @@ If "Font Awesome" is installed correctly, then you should see output that looks 
 ```
 
 If you do not see output of this nature, then that suggests that "Font Awesome is not installed correctly and thus this
-paper will not compile for you.
+paper will not compile for you. It is also possible that the paper will not compile correctly for you unless you
+specifically use the `xelatex` or `lualatex` compilers on the command line. If you are still having trouble compiling
+the paper, please consult the following [StackOverflow
+discussion](http://tex.stackexchange.com/questions/193900/how-to-use-fontawesome-package-in-moderncv).
