@@ -14,7 +14,7 @@ learn more about my research program, then you can checkout my
 
 For your quick reference, here is a reference for the paper:
 
-> Gregory M. Kapfhammer, Chris J. Wright and Phil McMinn.
+> Gregory M. Kapfhammer, Chris J. Wright, and Phil McMinn.
 > Hitchhikers Need Free Vehicles! Shared Repositories for Statistical Analysis in SBST.
 > International Workshop on Search-Based Software Testing (SBST 2016).
 
@@ -26,7 +26,7 @@ You can type the following command if you want to clone this repository:
 git clone https://github.com/gkapfham/sbst2016-paper.git
 ```
 
-Then, if you want to compile the paper to a PDF, you should type the following commands.
+Then, if you want to compile the paper to a PDF, then you should type the following commands.
 
 ```shell
 cd sbst2016-paper
@@ -43,22 +43,23 @@ execution environment, then please open a new issue and I will attempt to resolv
 
 ## Troubleshooting
 
-If you are struggling to get this paper to compile correctly, please observe that it uses the "Font Awesome" package
-that is now distributed with recent versions of LaTeX. You can check to see if you have this package installed by typing
-the following command in a terminal window:
+If you are struggling to get this paper to compile correctly, then please observe that it uses the "Font Awesome"
+package that should be distributed with most recent versions of LaTeX. You can check to see if you have this package
+installed by typing the following command in a terminal window:
 
 ```shell
 fc-list | grep fontawesome
 ```
 
-If "Font Awesome" is installed correctly, then you should see output that looks like the following:
+If Font Awesome is installed correctly, then you should see output that looks like the following:
 
 ```shell
 /usr/local/texlive/2015/texmf-dist/fonts/opentype/public/fontawesome/FontAwesome.otf: FontAwesome:style=Regular
 ```
 
-If you do not see output of this nature, then that suggests that "Font Awesome is not installed correctly and thus this
-paper will not compile for you. It is also possible that the paper will not compile correctly for you unless you
+If you do not see output of this nature, then that suggests that Font Awesome is not installed correctly and thus this
+paper will not compile for you. It is also possible that the paper will not compile correctly unless you
 specifically use the `xelatex` or `lualatex` compilers on the command line. If you are still having trouble compiling
 the paper, please consult the following [StackOverflow
-discussion](http://tex.stackexchange.com/questions/193900/how-to-use-fontawesome-package-in-moderncv).
+discussion](http://tex.stackexchange.com/questions/193900/how-to-use-fontawesome-package-in-moderncv). Again, if
+problems still persist, then please open a new issue and I will help to resolve your challenges!
