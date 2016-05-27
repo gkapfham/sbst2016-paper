@@ -1,4 +1,4 @@
-# seke2015-paper
+# sbst2016-paper
 
 This repository contains the LaTeX source code and additional resources for a paper that was accepted for publication at
 the 27th International Conference on Software Engineering and Knowledge Engineering (SEKE 2015). The source code of the
@@ -31,10 +31,7 @@ manually installed using the TeXLive installer.  It is also worth noting that yo
 LaTeX development tools, such as `latexmk`. If you are unable to compile the paper with your development tools and your
 execution environment, then please open a new issue and I will attempt to resolve your concerns.
 
-# Gregory M. Kapfhammer, Chris J. Wright and Phil McMinn.
+Gregory M. Kapfhammer, Chris J. Wright and Phil McMinn.
 Hitchhikers Need Free Vehicles! Shared Repositories for Statistical Analysis in SBST.
-International Workshop on Search-Based Software Testing (SBST 2016),
-_TODO: details need to be completed._
+International Workshop on Search-Based Software Testing (SBST 2016).
 
-# Build instructions:
-Unfortunately I don't know how to build this paper, email sent to Greg 30/3/2016
