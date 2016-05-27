@@ -16,7 +16,7 @@ Here is a reference for the paper:
 
 > Gregory M. Kapfhammer, Chris J. Wright, and Phil McMinn.
 > Hitchhikers Need Free Vehicles! Shared Repositories for Statistical Analysis in SBST.
-> International Workshop on Search-Based Software Testing (SBST 2016).
+> 9th International Workshop on Search-Based Software Testing (SBST 2016).
 
 ## Installation Instructions
 
